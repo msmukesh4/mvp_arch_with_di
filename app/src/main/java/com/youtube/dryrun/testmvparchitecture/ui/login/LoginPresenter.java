@@ -26,7 +26,7 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
             return;
         }
 
-        if (AppUtils.isEmailValid(email)){
+        if (!AppUtils.isEmailValid(email)){
             getMvpView().showError(R.string.err_invalid_email);
             return;
         }
@@ -37,7 +37,7 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
             return;
         }
 
-        if (AppUtils.isPasswordValid(password)){
+        if (!AppUtils.isPasswordValid(password)){
             getMvpView().showError(R.string.err_invalid_password);
             return;
         }

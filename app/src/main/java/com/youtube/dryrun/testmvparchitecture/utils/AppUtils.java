@@ -39,6 +39,6 @@ public final class AppUtils {
     }
 
     public static boolean isPasswordValid(String password){
-        return password.length() > 6 ? true : false;
+        return password.length() >= 6 ? true : false;
     }
 }

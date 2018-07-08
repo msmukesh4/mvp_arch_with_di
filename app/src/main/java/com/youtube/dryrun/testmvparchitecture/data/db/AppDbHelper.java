@@ -17,8 +17,7 @@ public class AppDbHelper implements DbHelper {
 
     @Inject
     public AppDbHelper(@ApplicationContext Context context,
-                       @DatabaseInfo String dbName,
-                       @DatabaseInfo Integer version){
+                       @DatabaseInfo String dbName){
     }
 
     @Override

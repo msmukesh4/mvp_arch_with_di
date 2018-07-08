@@ -28,15 +28,13 @@ public class AppDataManager implements DataManager {
 
     @Inject
     public AppDataManager(@ApplicationContext Context context,
-                          DbHelper dbHelper,
-                          ApiHelper apiHelper,
+                          DbHelper dbHelper, ApiHelper apiHelper,
                           PreferenceHelper preferenceHelper) {
         this.context = context;
         this.dbHelper = dbHelper;
         this.apiHelper = apiHelper;
         this.preferenceHelper = preferenceHelper;
     }
-
 
     @Override
     public void setUserAsLoggerOut() {

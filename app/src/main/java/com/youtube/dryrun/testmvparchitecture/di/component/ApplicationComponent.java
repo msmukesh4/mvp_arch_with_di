@@ -31,11 +31,11 @@ public interface ApplicationComponent {
 
     void inject(TestMvpApplication testMvpApplication);
 
-//    @ApplicationContext
-//    Context context();
-//
-//    Application getApplication();
-//
-//    DataManager getDataManager();
+    @ApplicationContext
+    Context context();
+
+    Application application();
+
+    DataManager getDataManager();
 
 }

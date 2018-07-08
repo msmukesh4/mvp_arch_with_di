@@ -39,4 +39,8 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
     public void handleApiError(String error) {
         Log.e(TAG, "handleApiError: "+error );
     }
+
+    public DataManager getDataManager() {
+        return dataManager;
+    }
 }

@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#ffffff</color>
+    <color name="google">#d34836</color>
+    <color name="transparent">#00000000</color>
+    <color name="fb">#3b5998</color>
 </resources>

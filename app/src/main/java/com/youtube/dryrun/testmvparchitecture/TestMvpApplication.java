@@ -8,19 +8,20 @@ import com.youtube.dryrun.testmvparchitecture.di.module.ApplicationModule;
 
 public class TestMvpApplication extends Application {
 
-    protected ApplicationComponent applicationComponent;
+    protected ApplicationComponent mApplicationComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        applicationComponent = DaggerApplicationComponent
+        mApplicationComponent = DaggerApplicationComponent
                 .builder()
                 .applicationModule(new ApplicationModule(this))
                 .build();
-        applicationComponent.inject(this);
+
+        mApplicationComponent.inject(this);
     }
 
     public ApplicationComponent getComponent() {
-        return applicationComponent;
+        return mApplicationComponent;
     }
 }

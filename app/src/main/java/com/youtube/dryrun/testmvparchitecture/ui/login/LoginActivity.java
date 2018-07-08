@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.youtube.dryrun.testmvparchitecture.R;
 import com.youtube.dryrun.testmvparchitecture.data.AppDataManager;
@@ -14,12 +16,14 @@ import com.youtube.dryrun.testmvparchitecture.ui.home.HomeActivity;
 
 import javax.inject.Inject;
 
-public class LoginActivity extends BaseActivity implements LoginMvpView {
+public class LoginActivity extends BaseActivity implements LoginMvpView, View.OnClickListener {
 
     @Inject
     LoginMvpPresenter<LoginMvpView> mPresenter;
 
     EditText etPassword, etEmail;
+    Button btnLogin;
+    ImageButton btnFacebook, btnGoogle;
 
     public static Intent getStartIntent(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
@@ -27,7 +31,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -56,6 +60,13 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     protected void setUp() {
         etPassword = findViewById(R.id.et_password);
         etEmail = findViewById(R.id.et_email);
+        btnLogin = findViewById(R.id.btn_login);
+        btnFacebook = findViewById(R.id.btn_fb);
+        btnGoogle = findViewById(R.id.btn_google);
+
+        btnLogin.setOnClickListener(this);
+        btnFacebook.setOnClickListener(this);
+        btnGoogle.setOnClickListener(this);
     }
 
     @Override
@@ -69,5 +80,23 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     protected void onDestroy() {
         mPresenter.onDetach();
         super.onDestroy();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_login:
+                onServerLoginClick(v);
+                break;
+
+            case R.id.btn_fb:
+                onFbClick(v);
+                break;
+
+            case R.id.btn_google:
+                onGoogleClick(v);
+                break;
+
+        }
     }
 }
