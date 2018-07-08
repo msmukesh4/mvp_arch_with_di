@@ -6,4 +6,6 @@ import com.youtube.dryrun.testmvparchitecture.ui.base.MvpView;
 
 public interface HomeMvpView extends MvpView {
 
+    void openLoginActivity();
+
 }

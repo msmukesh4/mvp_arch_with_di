@@ -2,6 +2,7 @@ package com.youtube.dryrun.testmvparchitecture.di.component;
 
 import com.youtube.dryrun.testmvparchitecture.di.PerActivity;
 import com.youtube.dryrun.testmvparchitecture.di.module.ActivityModule;
+import com.youtube.dryrun.testmvparchitecture.ui.home.HomeActivity;
 import com.youtube.dryrun.testmvparchitecture.ui.login.LoginActivity;
 
 import javax.inject.Singleton;
@@ -21,5 +22,7 @@ import dagger.Component;
 public interface ActivityComponent {
 
     void inject(LoginActivity loginActivity);
+
+    void inject(HomeActivity homeActivity);
 
 }

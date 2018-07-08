@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.youtube.dryrun.testmvparchitecture.di.ActivityContext;
 import com.youtube.dryrun.testmvparchitecture.di.PerActivity;
+import com.youtube.dryrun.testmvparchitecture.ui.home.HomeMvpPresenter;
+import com.youtube.dryrun.testmvparchitecture.ui.home.HomeMvpView;
+import com.youtube.dryrun.testmvparchitecture.ui.home.HomePresenter;
 import com.youtube.dryrun.testmvparchitecture.ui.login.LoginMvpPresenter;
 import com.youtube.dryrun.testmvparchitecture.ui.login.LoginMvpView;
 import com.youtube.dryrun.testmvparchitecture.ui.login.LoginPresenter;
@@ -38,6 +41,13 @@ public class ActivityModule {
     @PerActivity
     LoginMvpPresenter<LoginMvpView> provideLoginPresenter(
             LoginPresenter<LoginMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    HomeMvpPresenter<HomeMvpView> provideHomePresenter(
+            HomePresenter<HomeMvpView> presenter) {
         return presenter;
     }
 }
